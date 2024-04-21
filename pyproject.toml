@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "adams-text-utils"
-version = "0.1.0"
+version = "1.0.0"
 description = "Various text processing utilities I use in my projects"
 authors = ["Adam Ryczkowski <adam@statystyka.net>"]
 readme = "README.md"

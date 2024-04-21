@@ -8,18 +8,19 @@ def human_readable_size(size, decimal_places=2):
     return f"{size:.{decimal_places}f} {unit}"
 
 
-def format_txt_list(ltxt: list[str], max_number: int = -1) -> str:
+def format_txt_list(ltxt: list[str], max_length: int = -1) -> str:
     if len(ltxt) == 0:
         return ""
     if len(ltxt) == 1:
         return ltxt[0]
     else:
-        if max_number == -1 or len(ltxt) <= max_number:
+        if max_length == -1 or len(ltxt) <= max_length - 2:
             out = ", ".join(ltxt[:-1])
             return out + " and " + ltxt[-1]
         else:
-            assert max_number > 1
-            ltxt1, ltxt2 = ltxt[0:max_number], ltxt[-1]
+            assert max_length > 3
+            max_length -= 2
+            ltxt1, ltxt2 = ltxt[0:max_length], ltxt[-1]
             return ", ".join(ltxt1) + ", … , " + ltxt2
 
 
